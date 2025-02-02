@@ -1907,6 +1907,40 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.gnss@2.0-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/android.hardware.gnss@2.0-impl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libhardware",
+                "libhidlbase",
+                "android.hardware.gnss@2.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss.measurement_corrections@1.0",
+                "android.hardware.gnss.visibility_control@1.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.qti.chi.override",
     owner: "samsung",
     strip: {
@@ -1935,6 +1969,92 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.camera.postproc@1.0-service-impl",
                 "vendor.qti.hardware.vpp@1.1",
                 "vendor.qti.hardware.vpp@1.2",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "flp.default",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/flp.default.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "gps.default",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/gps.default.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.gnss@2.0-impl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libhidlbase",
+                "libutils",
+                "libhardware",
+                "vendor.samsung.hardware.gnss@2.0",
+                "libc++",
                 "libc",
                 "libm",
                 "libdl",
@@ -2239,5 +2359,143 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libwrappergps",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libwrappergps.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung.hardware.gnss@2.0",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.samsung.hardware.gnss@2.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+sh_binary {
+    name: "gps",
+    owner: "samsung",
+    src: "proprietary/vendor/bin/hw/gps.sh",
+    filename: "gps.sh",
+    sub_dir: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "gpsd",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/gpsd",
+            ],
+            shared_libs: [
+                "android.frameworks.sensorservice@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libhardware_legacy",
+                "libcutils",
+                "libssl",
+                "libcrypto",
+                "libwrappergps",
+                "libandroid_net",
+                "libz",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.samsung.hardware.gnss@2.0-service",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/vendor.samsung.hardware.gnss@2.0-service",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libutils",
+                "libhardware",
+                "libbinder",
+                "libhidlbase",
+                "android.frameworks.sensorservice@1.0",
+                "android.hardware.gnss@1.0",
+                "android.hardware.gnss@1.1",
+                "android.hardware.gnss@2.0",
+                "android.hardware.gnss@2.1",
+                "vendor.samsung.hardware.gnss@2.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
     soc_specific: true,
 }

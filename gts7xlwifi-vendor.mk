@@ -16,6 +16,14 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/audconf/OPEN/Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/audconf/OPEN/Headset_cal.acdb \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/audconf/OPEN/Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/audconf/OPEN/Speaker_cal.acdb \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/audconf/OPEN/workspaceFile.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/audconf/OPEN/workspaceFile.qwsp \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/deleteLogCommands:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/deleteLogCommands \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/gps.debug.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.debug.xml \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/gps.gsi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.gsi.xml \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/gps.issuetracker.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.issuetracker.xml \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/gnss/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/init/init.gps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.gps.rc \
+    vendor/samsung/gts7xlwifi/proprietary/vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/qdcm_calib_data_ss_dsi_panel_S6TUUM2_AMSA24VU01_WQXGA.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ss_dsi_panel_S6TUUM2_AMSA24VU01_WQXGA.xml \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/qdcm_calib_data_ss_dsi_panel_S6TUUM3_AMSA24VU01_WQXGA.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_ss_dsi_panel_S6TUUM3_AMSA24VU01_WQXGA.xml \
     vendor/samsung/gts7xlwifi/proprietary/vendor/etc/sensors/config/ak991x_dri_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/ak991x_dri_0.json \
@@ -139,7 +147,11 @@ PRODUCT_PACKAGES += \
     com.qti.feature2.serializer \
     com.qti.feature2.stub \
     com.qti.feature2.swmf \
+    android.hardware.gnss@2.0-impl \
     com.qti.chi.override \
+    flp.default \
+    gps.default \
+    vendor.samsung.hardware.gnss@2.0-impl \
     libbauthserver \
     libbauthtzcommon \
     libdualcam_optical_zoom_control \
@@ -150,4 +162,9 @@ PRODUCT_PACKAGES += \
     libqfp_sensortest \
     libsynaFpSensorTestNwd \
     libthirdparty_zoomtranslator_imp \
-    libvdis_interface
+    libvdis_interface \
+    libwrappergps \
+    vendor.samsung.hardware.gnss@2.0 \
+    gps \
+    gpsd \
+    vendor.samsung.hardware.gnss@2.0-service

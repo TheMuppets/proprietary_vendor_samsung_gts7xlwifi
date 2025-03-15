@@ -164,6 +164,8 @@ PRODUCT_PACKAGES += \
     libthirdparty_zoomtranslator_imp \
     libvdis_interface \
     libwrappergps \
+    sensors.grip \
+    sensors.ssc \
     vendor.samsung.hardware.gnss@2.0 \
     gps \
     gpsd \

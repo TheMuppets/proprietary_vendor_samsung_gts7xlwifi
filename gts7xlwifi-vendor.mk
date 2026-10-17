@@ -91,6 +91,8 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/gts7xlwifi/proprietary/vendor/lib64/camera/com.samsung.tuned.lsi_s5k5e9yu05.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.samsung.tuned.lsi_s5k5e9yu05.bin
 
 PRODUCT_PACKAGES += \
+    lib_SamsungRec_07010 \
+    librecordalive \
     A08QL_libTsAeFront \
     A08QL_libTsAfFront \
     A08QL_libTsAwbFront \
